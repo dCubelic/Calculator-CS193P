@@ -33,10 +33,17 @@ class ViewController: UIViewController {
             } else {
                 let textCurentlyInDisplay = display.text!
                 display.text = textCurentlyInDisplay + "."
-            }            
+            }
             userIsInTheMiddleOfDecimalNumber = true
         }
         userIsInTheMiddleOfTyping = true
+    }
+    
+    @IBAction func clear(_ sender: UIButton) {
+        display.text = "0"
+        brain.setOperand(operand: 0)
+        userIsInTheMiddleOfTyping = false
+        userIsInTheMiddleOfDecimalNumber = false
     }
     
     private var displayValue: Double {
